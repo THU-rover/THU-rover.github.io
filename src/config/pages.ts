@@ -2,43 +2,43 @@ import type { PagesConfig } from "../types";
 
 export const PAGES: PagesConfig = {
     home: {
-        title: "About Me",
-        subtitle: "",
+        title: "关于我",
+    subtitle: "“先活在问题里。”里尔克《给青年诗人的信》",
         isActive: true,
     },
     blog: {
-        title: "Blog",
-        subtitle: "Thoughts on physics, philosophy, and music.",
-        isActive: true,
+        title: "Journal",
+        subtitle: "Notes from research, making, and the edges of my curiosity.",
+        isActive: false,
     },
     publications: {
         title: "Publications",
-        subtitle: "A collection of research papers and scientific articles.",
-        isActive: true,
+        subtitle: "Selected papers, reports, and research artifacts.",
+        isActive: false,
     },
     talks: {
         title: "Talks & Presentations",
-        subtitle: "Public lectures, colloquia, and conference presentations.",
-        isActive: true,
+        subtitle: "Talks, posters, and ideas shared in public.",
+        isActive: false,
     },
     projects: {
-        title: "Code & Projects",
-        subtitle: "Open source contributions and technological experiments.",
+        title: "Selected Work",
+        subtitle: "Research projects, experiments, and things I have built.",
         isActive: true,
     },
     teaching: {
         title: "Teaching",
-        subtitle: "Academic courses and educational materials.",
-        isActive: true,
+        subtitle: "Explanations, workshops, and learning materials.",
+        isActive: false,
     },
     tags: {
         title: "Tags",
-        subtitle: "Explore content by topic.",
-        isActive: true,
+        subtitle: "Explore journal entries by topic.",
+        isActive: false,
     },
     cv: {
-        title: "Curriculum Vitae",
-        subtitle: "Academic and professional history.",
-        isActive: true,
+        title: "CV",
+        subtitle: "A compact record of my academic and professional path.",
+        isActive: false,
     },
 };

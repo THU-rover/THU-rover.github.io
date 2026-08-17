@@ -3,7 +3,6 @@ import { SITE, THEME_CONFIG, SETTINGS } from "../../config";
 import Icon from "../ui/Icon.astro";
 
 const currentYear = new Date().getFullYear();
-const showToggle = THEME_CONFIG.lightAndDark;
 const showDevTools = import.meta.env.DEV || SETTINGS.addDevToolsInProduction;
 ---
 
@@ -30,18 +29,6 @@ const showDevTools = import.meta.env.DEV || SETTINGS.addDevToolsInProduction;
         >
             <Icon name="RSS" size={16} />
         </a>
-        {
-            showToggle && (
-                <button
-                    id="theme-toggle"
-                    aria-label="Toggle Dark Mode"
-                    class="btn-icon"
-                >
-                    <Icon name="Sun" size={16} class="hidden dark:block" />
-                    <Icon name="Moon" size={16} class="block dark:hidden" />
-                </button>
-            )
-        }
         {
             showDevTools && (
                 <a

@@ -1,28 +1,40 @@
 ---
-name: "Claude Shannon"
-avatar: "shannon.jpg"
-shortBio: "Mathematician and electrical engineer known as the 'Father of Information Theory'. Pioneer in digital computing and cryptography."
-institution: "MIT, Cambridge MA"
+name: "张毅天"
+avatar: "images/avatar.jpg"
+shortBio: "物理学专业学生，在公式、代码与真实世界之间寻找自己的方向。"
+institution: "物理 · 计算 · 信息"
 ---
 
-I am a mathematician and electrical engineer best known for founding **Information Theory**. My work in the late 1940s established the theoretical foundations of modern digital communications and computing.
+## 物理与问题
 
-## My Life
+本科读的是物理。谈起这门学科，很难把自己归进"聪明"那一类。课本上的推导从眼前经过，多数没有真正带回来，只把例题的路径记在纸上，等考试时重走一遍。
 
-Born in Petoskey, Michigan on April 30, 1916, I showed an early aptitude for engineering and mathematics. After studying at the University of Michigan, I completed my PhD at MIT where I famously applied Boolean algebra to electrical circuits. My master's thesis on relay switching circuits is considered one of the most important master's theses ever written.
+记得课堂里那些短暂的停顿。老师写下一个出人意料的变换，或者把一个复杂现象放进简洁的模型，那一刻会忽然明白，原来问题还能从别处看。这样的时刻不频繁，却都留了下来。
 
-During World War, I worked at Bell Labs on fire control systems and cryptography, which led to my seminal work in information theory.
+## 从物理走向计算
 
-## Current Work
+计算、信号处理和人工智能，是后来慢慢走进视野的。想往物理系统内部看，光与电磁怎样被写成模型，热与流体怎样进入仿真，复杂的计算由怎样的架构和工作流承接。
 
-I continue to work on various problems at the intersection of mathematics, engineering, and computer science. My interests include artificial intelligence, pattern recognition, game theory, and the fundamental limits of computation.
+正在靠近物理人工智能这条线，也愿意把目光放到更广阔的硬件系统上。算法最终要落在某个真实的问题里，经过设备、材料、信号和人的使用，才会显出分量。希望做出的东西，能从公式出发，经过代码和实验，最后在现实里留下可被感知的结果。
 
-I also enjoy juggling, unicycling, and playing the clarinet - I even built a juggling machine!
+## 读公式，也读世界
 
-## Research Interests
+物理留下的，超过考试时背下的步骤。面对一个公式，会追问它描述的对象，也留意它成立的边界。面对一段代码，想知道每个结果从哪里来，什么条件改变以后会怎样失效。
 
-My research focus includes: **Information Theory**, **Cryptography**, **Digital Computing**, **Artificial Intelligence**, **Game Theory**, and **Switching Circuits**.
+对未来，仍然犹豫。研究、工作、创业，各有吸引人的地方，也各有需要承担的部分。暂时不想替自己选定一个过早的名字。复杂的问题值得多走几步，模糊的方向可以在原处放一会儿。没有答案的时候，先承认没有答案，反而更接近问题。
 
----
+## 白天与夜晚
 
-*"I am a mathematician. I am interested in the fundamental limits on the rate at which information can be transmitted."*
+夜里喜欢沿小道散步，也想有一天走遍山川大海。白天是代码和公式，晚上是脚步。风从路边的树梢落下来，树影在灯下移动，偶尔有人擦肩而过。这几分钟有它自己的位置，是自然的一段。
+
+也写一点东西，摘抄读书时遇到的句子。喜欢的先抄下来，过些日子翻回去看，语气和心情常一起变。社会怎样运行，人为什么彼此靠近又错过，这类问题常占据思绪。想久了，就试着把它们说得简单。有人愿意听懂，有人愿意接住，这件事很重要。
+
+## 留下尚未完成的事
+
+> 对你心中尚未解决的一切，要有耐心，试着去热爱问题本身。
+>
+> 里尔克《给青年诗人的信》
+
+这句话很接近我想留下的状态。研究兴趣、正在做的尝试、读过的内容，还有以后想继续靠近的问题，都可以放在这里。做完的值得留下，思考转弯的地方也值得留下。
+
+方向会在时间里慢慢显形，兴趣会向别处移动。只想把走过的路写下来。回头看时，或许能认出那个仍在学习、仍在犹豫，也仍愿意向前走的人。

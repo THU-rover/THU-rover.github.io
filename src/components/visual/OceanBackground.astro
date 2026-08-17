@@ -1,0 +1,101 @@
+<canvas id="ocean-background" class="ocean-background" aria-hidden="true"></canvas>
+
+<script is:inline>
+    const startOcean = () => {
+        const canvas = document.getElementById("ocean-background");
+        if (!(canvas instanceof HTMLCanvasElement) || canvas.dataset.ready === "true") return;
+
+        canvas.dataset.ready = "true";
+        const context = canvas.getContext("2d");
+        if (!context) return;
+
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let width = 0;
+        let height = 0;
+        let frame = 0;
+
+        const resize = () => {
+            const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = Math.round(width * ratio);
+            canvas.height = Math.round(height * ratio);
+            canvas.style.width = `${width}px`;
+            canvas.style.height = `${height}px`;
+            context.setTransform(ratio, 0, 0, ratio, 0, 0);
+        };
+
+        const waveLayers = [
+            { y: 0.47, amp: 8, freq: 0.009, speed: 0.00018, color: "#1e56c3" },
+            { y: 0.55, amp: 14, freq: 0.007, speed: -0.00013, color: "#0c43a8" },
+            { y: 0.64, amp: 19, freq: 0.0055, speed: 0.00011, color: "#003493" },
+            { y: 0.74, amp: 24, freq: 0.0045, speed: -0.00008, color: "#00246e" },
+            { y: 0.86, amp: 29, freq: 0.0035, speed: 0.00006, color: "#00143f" },
+        ];
+
+        const draw = (time = 0) => {
+            const sky = context.createLinearGradient(0, 0, 0, height);
+            sky.addColorStop(0, "#050714");
+            sky.addColorStop(0.3, "#111a3d");
+            sky.addColorStop(0.46, "#65445c");
+            sky.addColorStop(0.52, "#1648a7");
+            sky.addColorStop(1, "#00091f");
+            context.fillStyle = sky;
+            context.fillRect(0, 0, width, height);
+
+            const horizon = context.createLinearGradient(0, height * 0.38, 0, height * 0.56);
+            horizon.addColorStop(0, "rgba(242, 170, 126, 0)");
+            horizon.addColorStop(0.5, "rgba(242, 170, 126, 0.09)");
+            horizon.addColorStop(1, "rgba(0, 47, 167, 0)");
+            context.fillStyle = horizon;
+            context.fillRect(0, height * 0.36, width, height * 0.24);
+
+            for (const layer of waveLayers) {
+                const phase = reduceMotion.matches ? 0 : time * layer.speed;
+                context.beginPath();
+                context.moveTo(0, height);
+                for (let x = 0; x <= width + 16; x += 16) {
+                    const wave = Math.sin(x * layer.freq + phase) * layer.amp;
+                    const crossWave = Math.sin(x * layer.freq * 0.43 - phase * 1.7) * layer.amp * 0.42;
+                    context.lineTo(x, height * layer.y + wave + crossWave);
+                }
+                context.lineTo(width, height);
+                context.closePath();
+                context.fillStyle = layer.color;
+                context.fill();
+
+                context.strokeStyle = "rgba(111, 154, 255, 0.16)";
+                context.lineWidth = 1;
+                context.stroke();
+            }
+
+            for (let line = 0; line < 16; line += 1) {
+                const depth = line / 15;
+                const baseline = height * (0.5 + depth * 0.46);
+                const phase = reduceMotion.matches ? 0 : time * (0.00008 + depth * 0.00008);
+                context.beginPath();
+                for (let x = 0; x <= width + 12; x += 12) {
+                    const ripple = Math.sin(x * (0.011 - depth * 0.006) + phase + line) * (2 + depth * 8);
+                    if (x === 0) context.moveTo(x, baseline + ripple);
+                    else context.lineTo(x, baseline + ripple);
+                }
+                context.strokeStyle = `rgba(126, 166, 255, ${0.12 - depth * 0.06})`;
+                context.lineWidth = 0.75;
+                context.stroke();
+            }
+
+            if (!reduceMotion.matches) frame = requestAnimationFrame(draw);
+        };
+
+        resize();
+        draw();
+        window.addEventListener("resize", resize, { passive: true });
+        reduceMotion.addEventListener("change", () => {
+            cancelAnimationFrame(frame);
+            draw();
+        });
+    };
+
+    document.addEventListener("astro:page-load", startOcean);
+    startOcean();
+</script>

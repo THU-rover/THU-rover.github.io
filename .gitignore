@@ -5,6 +5,11 @@ dist/
 # generated types
 .astro/
 
+# local working files
+tmp/
+artifacts/
+sources/
+
 # dependencies
 node_modules/
 
